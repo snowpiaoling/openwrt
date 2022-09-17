@@ -160,7 +160,8 @@ DTC_FLAGS += \
   -Wno-unique_unit_address
 
 define Image/pad-to
-	dd if=$(1) of=$(1).new bs=$(2) conv=sync
+	dd if=$(1) of=$(1).new bs=32 conv=sync
+	#dd if=$(1) of=$(1).new bs=$(2) conv=sync
 	mv $(1).new $(1)
 endef
 
